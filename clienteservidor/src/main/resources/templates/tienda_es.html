@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<a href="admin/obtenerLibros">acceso a administracion</a>
+<div style="text-align: center;font-size: 2em;background-color: yellow" >
+	Bienvenido a la parte publica de la tienda
+</div>
+<div>
+	<a href="?idioma=es">ESPAÑOL</a> 
+	<a href="?idioma=en">INGLES</a> 		
+</div>
+
+<div>
+	<a id="enlace_productos" href="#">PRODUCTOS</a> &nbsp;&nbsp;
+	<a id="enlace_identificarme" href="#">IDENTIFICARME</a> &nbsp;&nbsp;
+	<a id="enlace_registrarme" href="#">REGISTRARME</a> &nbsp;&nbsp;
+	<a id="enlace_carrito" href="#">CARRITO</a> &nbsp;&nbsp;
+	<a id="" onclick="alert('por hacer...')" href="#">MIS PEDIDOS</a> &nbsp;&nbsp;
+</div>
+<div style="text-align: right;margin: 20px" id="login_usuario">
+usuario no identificado
+</div>
+<div id="contenedor">
+
+</div>
+
+<!-- incluir los archivos de javascript necesarios -->
+<script src="librerias_js/jquery.js"></script>
+<script src="librerias_js/mustache.js"></script>
+<script src="javascript/globales.js"></script>
+<script src="javascript/cargar_plantillas.js"></script>
+<script src="javascript/funciones_menu.js"></script>
+<script src="javascript/main.js"></script>
+
+
+</body>
+</html>

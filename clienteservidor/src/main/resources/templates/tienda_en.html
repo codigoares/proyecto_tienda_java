@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<a href="admin/obtenerLibros">enter administration</a>
+<div style="text-align: center;font-size: 2em;background-color: yellow" >
+	Welcome to the Book Store
+</div>
+<div>
+	<a href="?idioma=es">SPANISH</a> 
+	<a href="?idioma=en">ENGLISH</a> 		
+</div>
+
+<div>
+	<a id="enlace_productos" href="#">PRODUCTS</a> &nbsp;&nbsp;
+	<a id="enlace_identificarme" href="#">LOG IN</a> &nbsp;&nbsp;
+	<a id="enlace_registrarme" href="#">SIGN IN</a> &nbsp;&nbsp;
+	<a id="enlace_carrito" href="#">CART</a> &nbsp;&nbsp;
+	<a id="" onclick="alert('por hacer...')" href="#">ORDERS</a> &nbsp;&nbsp;
+</div>
+<div style="text-align: right;margin: 20px" id="login_usuario">
+unindentified user
+</div>
+<div id="contenedor">
+
+</div>
+
+<!-- incluir los archivos de javascript necesarios -->
+<script src="librerias_js/jquery.js"></script>
+<script src="librerias_js/mustache.js"></script>
+<script src="javascript/globales.js"></script>
+<script>
+	idioma = "_en"
+</script>
+<script src="javascript/cargar_plantillas.js"></script>
+<script src="javascript/funciones_menu.js"></script>
+<script src="javascript/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:insert="fragments/general.html :: menu" ></div>
+
+modifica los datos del libro:
+
+<form action="#" th:action="guardarCambiosLibro" th:object="${libroEditar}" enctype="multipart/form-data" method="post" >
+
+	titulo: <input type="text" th:field="*{titulo}" /> <br>
+	
+	precio: <input type="number" step=".01" th:field="*{precio}" /> <br>
+	
+	descripcion:<br> <textarea rows="3" cols="20" th:field="*{descripcion}" ></textarea>
+
+	<br>
+	categoria:
+	<select th:field="*{idCategoria}">
+		<option th:each="c : ${categorias}" th:text="${c.nombre}" th:value="${c.id}" />
+	</select>
+	
+	<br>
+	
+	<img style="height: 200px" th:src="@{${ '../mostrar_imagen?id=' + libroEditar.id }}"/>
+	<br>
+	actualizar imagen: <input type="file" th:field="*{imagen}" /> 
+	<br>
+
+	<input type="hidden" th:field="*{id}"/>
+
+	<br>
+	
+	<input type="submit" value="GUARDAR CAMBIOS">
+
+</form>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<div>identificate para poder entrar en administracion</div>
+
+<div style="color: red" th:text="${mensaje}" ></div>
+
+<form action="admin/obtenerLibros" method="post">
+	constraseña: <input type="password" name="pass-admin"><br>
+	<input type="submit" value="INICIAR SESION">
+</form>
+
+</body>
+</html>

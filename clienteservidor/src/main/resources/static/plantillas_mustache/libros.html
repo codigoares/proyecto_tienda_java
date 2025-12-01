@@ -1,0 +1,25 @@
+<div class="panel-root">
+	<div class="panel-title">Listado de libros de la tienda</div>
+
+	{{ #array_libros }}
+		<article class="list-item" data-libro-id="{{ ID }}">
+			<img src="mostrar_imagen?id={{ ID }}" alt="Portada - {{ TITULO }}" onerror="this.onerror=null;this.src='/imagenes_base/libros/1984.jpg'" />
+
+			<div class="item-info">
+				<div class="title">{{ TITULO }}</div>
+				<div class="meta">Precio: {{ PRECIO }}</div>
+				<div class="meta">Categoria: {{ NOMBRE_CATEGORIA }}</div>
+				<div class="meta">{{ DESCRIPCION }}</div>
+			</div>
+
+			<div class="item-actions">
+				<a href="#" class="link-btn" onclick="event.preventDefault(); alert('por hacer...')">VER DETALLES</a>
+				<button type="button" class="primary-btn enlace_comprar_producto" data-producto-id="{{ ID }}">AÑADIR AL CARRITO</button>
+			</div>
+		</article>
+	{{ /array_libros }}
+
+	{{ ^array_libros }}
+		<div class="empty-state">No hay libros disponibles.</div>
+	{{ /array_libros }}
+</div>

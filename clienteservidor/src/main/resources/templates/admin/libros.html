@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:insert="fragments/general.html :: menu" ></div>
+
+<div>
+	<a href="registrarLibro">registrar un nuevo libro</a>
+</div>
+
+<div th:each="libro: ${libros}" style="margin: 10px;">
+      titulo: <span th:text="${libro.titulo}" /> <br>
+      precio: <span th:text="${libro.precio}" /> <br>
+      descripcion: <span th:text="${libro.descripcion}" /> <br>
+      categoria: <span th:text="${libro.categoria.nombre}" /> <br>
+      <img style="height: 80px" th:src="@{${ '../mostrar_imagen?id=' + libro.id }}"/>
+      <br>
+      <a th:href="@{${ 'borrarLibro?id=' + libro.id }}" onclick="return confirm('¿seguro?')" >BORRAR</a>
+      <a th:href="@{${ 'editarLibro?id=' + libro.id }}" >EDITAR</a>
+</div>
+
+</body>
+</html>

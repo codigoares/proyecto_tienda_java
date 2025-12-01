@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:insert="fragments/general.html :: menu" ></div>
+
+Introduce los datos del nuevo libro:
+
+<form action="#" th:action="guardarLibro" th:object="${xxx}" method="post" enctype="multipart/form-data" >
+
+	titulo: <input type="text" th:field="*{titulo}" /> <br>
+	<span style="color: red;" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" ></span>
+	<br>
+	
+	precio: <input type="number" step=".01" th:field="*{precio}" /> <br>
+	<span style="color: red;" th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}" ></span>
+	<br>
+		
+	descripcion: <textarea rows="3" cols="20" th:field="*{descripcion}" ></textarea>
+	
+	<br>
+	categoria:
+	<select th:field="*{idCategoria}">
+		<option th:each="c : ${categorias}" th:text="${c.nombre}" th:value="${c.id}" />
+	</select>
+	
+	<br>
+	
+	portada: <input type="file" th:field="*{imagen}" /> 
+
+	<br><br>
+	
+	<input type="submit" value="REGISTRAR LIBRO">
+
+</form>
+
+</body>
+</html>
+
+
+
+
+

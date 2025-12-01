@@ -1,0 +1,28 @@
+
+
+<div class="panel-root">
+	<div class="panel-title">Carrito de la compra</div>
+
+	<div class="list">
+	{{#.}}
+		<article class="list-item" data-libro-id="{{LIBRO_ID}}">
+			<img src="mostrar_imagen?id={{LIBRO_ID}}" alt="Portada - {{TITULO}}" onerror="this.onerror=null;this.src='/imagenes_base/libros/1984.jpg'" />
+
+			<div class="item-info">
+				<div class="title">{{TITULO}}</div>
+				<div class="meta">Precio: {{PRECIO}} &nbsp;·&nbsp; Cantidad: {{CANTIDAD}}</div>
+				<div class="meta">{{DESCRIPCION}}</div>
+			</div>
+
+			<div class="item-actions">
+				<button type="button" class="link-btn enlace-borrar-producto-carrito" data-libro-id="{{LIBRO_ID}}">Borrar</button>
+			</div>
+		</article>
+	{{/.}}
+	</div>
+
+	<div style="text-align:center; margin-top:14px">
+		<a href="#" id="realizar_pedido" class="primary-btn">Realizar pedido</a>
+	</div>
+</div>
+

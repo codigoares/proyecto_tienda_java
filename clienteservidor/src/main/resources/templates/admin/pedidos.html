@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:insert="fragments/general.html :: menu" ></div>
+
+Listado de pedidos:
+<div th:each="pedido: ${pedidos}" style="margin: 15px">
+	<span th:text="${pedido.nombreCompleto}"></span> <br/>
+	<span th:text="${pedido.direccion}"></span> <br/>
+	estado: <span th:text="${pedido.estado}"></span> <br/>
+	<a th:href="@{${ 'verDetallesPedido?id=' + pedido.id }}">ver detalles</a>
+</div>
+
+
+</body>
+</html>
